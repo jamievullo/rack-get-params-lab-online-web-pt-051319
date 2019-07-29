@@ -35,7 +35,7 @@ def call(env)
       search_term = req.params["q"]	      
       resp.write handle_search(search_term)	      
     end
-
+  end
     resp.finish
   end
 
