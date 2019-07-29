@@ -21,8 +21,8 @@ def call(env)
       else
         @@cart.each do |cart|
           rep.write "#{item}\n"
+        end
       end
-    #end
     if req.path.match(/add/)
 			item = req.params["item"]
 			 	@@items.include?(item)
@@ -35,8 +35,7 @@ def call(env)
       search_term = req.params["q"]	      
       resp.write handle_search(search_term)	      
     end
-  end
-    resp.finish
+      resp.finish
   end
 
   def handle_search(search_term)
