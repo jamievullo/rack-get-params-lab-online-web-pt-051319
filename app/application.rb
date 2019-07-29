@@ -15,14 +15,14 @@ def call(env)
       @@items.each do |item|
           resp.write "#{item}\n"
       end
-    if req.path.match(/cart/)
-       @@cart.empty?
+      if req.path.match(/cart/)
+        @@cart.empty?
           resp.write "Your cart is empty"
       else
-      @@cart.each do |cart|
+        @@cart.each do |cart|
           rep.write "#{item}\n"
       end
-    end
+    #end
     if req.path.match(/add/)
 			item = req.params["item"]
 			 	@@items.include?(item)
